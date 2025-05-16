@@ -12,8 +12,12 @@ body {
 
 body {
   background-color: #fffbfa;
+  font-family: "Josefin Sans", sans-serif;
 }
 
+/* ---------------------------------------------------------------------------------------------- */
+/* THE STYLES BELOW HANDLE POSITIONING / LAYOUT (START) */
+/* ---------------------------------------------------------------------------------------------- */
 .grid-container {
   border: 2px solid blueviolet;
   display: grid;
@@ -23,7 +27,7 @@ body {
 }
 
 .item1 {
-  background-color: lightblue;
+  /* background-color: lightblue; */
   grid-column: 1;
   grid-row: 1;
 }
@@ -39,3 +43,52 @@ body {
   grid-column: 2;
   grid-row: 1 / 4;
 }
+/* ---------------------------------------------------------------------------------------------- */
+/* POSITIONING / LAYOUT (END) */
+/* ---------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------------------------------- */
+/* STYLING FOR EACH GRID ITEM (START) */
+/* ---------------------------------------------------------------------------------------------- */
+.item1.logo-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.item1.logo-container a {
+  border: 2px solid orangered;
+  /* display: block; */
+  width: fit-content;
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+/* STYLING FOR MOBILE DEVICES */
+/* ---------------------------------------------------------------------------------------------- */
+
+/* Media query for screen sizes <= 769px */
+@media (max-width: 769px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto; /* Let rows grow naturally */
+    }
+  
+    .item1,
+    .item2,
+    .item3 {
+      grid-column: 1;
+      grid-row: auto; /* Stack naturally */
+    }
+  
+    .item1 {
+      grid-row: 1;
+    }
+  
+    .item2 {
+      grid-row: 3;
+    }
+  
+    .item3 {
+      grid-row: 2;
+    }
+  }
+  
