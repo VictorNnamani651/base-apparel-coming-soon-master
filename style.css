@@ -9,3 +9,33 @@ body {
   height: 100%;
   width: 100%;
 }
+
+body {
+  background-color: #fffbfa;
+}
+
+.grid-container {
+  border: 2px solid blueviolet;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: 100%;
+}
+
+.item1 {
+  background-color: lightblue;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.item2 {
+  background-color: lightsalmon;
+  grid-column: 1;
+  grid-row: 2 / 4;
+}
+
+.item3 {
+  background-color: lightgreen;
+  grid-column: 2;
+  grid-row: 1 / 4;
+}
