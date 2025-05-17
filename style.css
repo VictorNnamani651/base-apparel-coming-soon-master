@@ -19,27 +19,24 @@ body {
 /* THE STYLES BELOW HANDLE POSITIONING / LAYOUT (START) */
 /* ---------------------------------------------------------------------------------------------- */
 .grid-container {
-  border: 2px solid blueviolet;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 0.7fr;
+  grid-template-rows: 0.7fr 1fr 1fr;
   height: 100%;
 }
 
 .item1 {
-  /* background-color: lightblue; */
   grid-column: 1;
   grid-row: 1;
 }
 
 .item2 {
-  background-color: lightsalmon;
+  /* background-color: lightsalmon; */
   grid-column: 1;
   grid-row: 2 / 4;
 }
 
 .item3 {
-  background-color: lightgreen;
   grid-column: 2;
   grid-row: 1 / 4;
 }
@@ -53,13 +50,89 @@ body {
 .item1.logo-container {
   display: flex;
   flex-direction: column;
+  padding: 2rem 8rem 0px 8rem;
+  user-select: none;
 }
 
 .item1.logo-container a {
-  border: 2px solid orangered;
-  /* display: block; */
   width: fit-content;
 }
+
+.item2.text-and-email {
+  padding: 0px 8rem;
+}
+
+.item2.text-and-email h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  letter-spacing: 1rem;
+  font-size: clamp(50px, 5vw, 10vw);
+}
+
+.text-and-email h1 span {
+  color: #ce9797;
+  font-weight: 300;
+  line-height: 2rem;
+}
+
+.text-and-email .sub-text {
+  color: #ce9797;
+  line-height: 1.5rem;
+}
+
+.text-and-email .email-container {
+  margin-top: 1rem;
+  border: 2px solid #ce9797;
+  display: flex;
+  border-radius: 2rem;
+}
+
+.email-container input {
+  padding: 1rem;
+  flex: 3;
+  border: none;
+  border-radius: inherit;
+}
+
+.email-container input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: #ce9797;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.email-container button {
+  flex: 1;
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  border-radius: 2rem;
+  border: none;
+}
+
+.email-container button:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.email-container button img {
+  display: block;
+  margin: 0 auto;
+}
+
+.item3.image-container {
+  background-image: url(images/hero-desktop.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* .item3.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+} */
 
 /* ---------------------------------------------------------------------------------------------- */
 /* STYLING FOR MOBILE DEVICES */
@@ -67,28 +140,35 @@ body {
 
 /* Media query for screen sizes <= 769px */
 @media (max-width: 769px) {
-    .grid-container {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto; /* Let rows grow naturally */
-    }
-  
-    .item1,
-    .item2,
-    .item3 {
-      grid-column: 1;
-      grid-row: auto; /* Stack naturally */
-    }
-  
-    .item1 {
-      grid-row: 1;
-    }
-  
-    .item2 {
-      grid-row: 3;
-    }
-  
-    .item3 {
-      grid-row: 2;
-    }
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1.5fr 3fr;
+    height: 100vh;
   }
-  
+
+  .item1,
+  .item2,
+  .item3 {
+    grid-column: 1;
+  }
+
+  .item1.logo-container {
+    grid-row: 1;
+    padding: 0px;
+    justify-content: center;
+  }
+
+  .item2.text-and-email {
+    grid-row: 3;
+    padding: 0px 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .item3.image-container {
+    grid-row: 2;
+    background-image: url(images/hero-mobile.jpg);
+  }
+}
