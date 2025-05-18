@@ -29,18 +29,19 @@
           Add your email below to stay up-to-date with announcements and our
           launch deals.
         </p>
-        <div class="email-container">
-          <input
-            type="email"
-            name=""
-            id=""
-            placeholder="Email Address"
-          /><button onclick="alert('clicked!')">
+
+        <div class="email-container border" id="email-form">
+          <input type="email" name="" id="email" placeholder="Email Address" />
+          <img src="images/icon-error.svg" alt="" class="error icon hide" />
+          <button type="submit" id="email-submit" onclick="validateEmail()">
             <img src="images/icon-arrow.svg" alt="" />
           </button>
         </div>
+
+        <p class="error text hide">Please provide a valid email</p>
       </div>
       <div class="item3 image-container"></div>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>

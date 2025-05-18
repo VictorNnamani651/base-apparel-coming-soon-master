@@ -83,7 +83,7 @@ body {
 
 .text-and-email .email-container {
   margin-top: 1rem;
-  border: 2px solid #ce9797;
+  border: 1px solid #ce9797;
   display: flex;
   border-radius: 2rem;
 }
@@ -103,6 +103,25 @@ input::placeholder {
   color: #ce9797;
   font-style: italic;
   font-size: 1rem;
+}
+
+.error.border {
+  border: 2px solid red;
+}
+
+.error.icon {
+  display: inline-block;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.hide.error {
+  display: none;
+}
+
+p.error.text {
+  color: red;
+  padding: 1rem;
 }
 
 .email-container button {
@@ -199,8 +218,8 @@ input::placeholder {
   }
 }
 
-@media screen and (min-width: 1001px) and (max-width: 1250px){
-.item2.text-and-email{
-  padding-right: 8rem;
-}
+@media screen and (min-width: 1001px) and (max-width: 1250px) {
+  .item2.text-and-email {
+    padding-right: 8rem;
+  }
 }
